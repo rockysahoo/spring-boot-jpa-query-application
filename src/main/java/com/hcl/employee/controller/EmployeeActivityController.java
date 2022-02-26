@@ -3,6 +3,8 @@ package com.hcl.employee.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,13 +20,17 @@ import javax.websocket.server.PathParam;
 @RequestMapping("/api")
 public class EmployeeActivityController {
 
+	Logger logger = LoggerFactory.getLogger(EmployeeActivityController.class);
+
 	@Autowired
 	EmployeeActivityService employeeActivityService;
 
 	@GetMapping("/get/employees")
 	public List<EmployeeActivity> getEmployees() {
 		List<EmployeeActivity> employees;
+
 		employees = employeeActivityService.retrieveEmployees();
+		logger.info("employees :" +employees);
 		return employees;
 	}
 
