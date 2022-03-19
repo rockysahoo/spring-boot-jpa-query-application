@@ -21,4 +21,8 @@ public interface EmployeeActivityDao extends JpaRepository<EmployeeActivity, Lon
 	@Query(value = "Select * from EMPLOYEE_ACTIVITY e where e.ID= :id AND e.EMPLOYEE_SALARY = :salary", nativeQuery = true)
 	Optional<List<EmployeeActivity>> getEmployeesWithIdAndSalary(Long id, Integer salary);
 
+
+
+
+
 }

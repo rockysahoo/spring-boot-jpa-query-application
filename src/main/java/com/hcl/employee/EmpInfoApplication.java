@@ -9,7 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class EmpInfoApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(EmpInfoApplication.class, args);
+
 	}
 
 }

@@ -14,9 +14,7 @@ public interface EmployeeActivityService {
 	public EmployeeActivity getEmployee(Long Id);
 
 	public Optional<List<EmployeeActivity>> getEmployeesWithIdAndSalary(Long id, Integer salary);
-	
 
 
-	
-
+	List<EmployeeActivity> getEmployeesWithSalary(Integer min_salary, Integer salary);
 }

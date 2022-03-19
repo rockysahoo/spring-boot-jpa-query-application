@@ -48,4 +48,12 @@ public class EmployeeActivityController {
 		return employees;
 	}
 
+	@GetMapping("/get/employees/filter/salary/{min_salary}/{max_salary}")
+	public Optional<List<EmployeeActivity>> getEmployeesWithSalary(@PathVariable("min_salary") Integer min_salary,
+																   @PathVariable("max_salary") Integer max_salary) {
+		Optional<List<EmployeeActivity>> employees;
+		employees = Optional.ofNullable(employeeActivityService.getEmployeesWithSalary(min_salary, max_salary));
+		return employees;
+	}
+
 }
