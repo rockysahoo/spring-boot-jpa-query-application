@@ -2,7 +2,6 @@ package com.hcl.employee.controller;
 
 import com.hcl.employee.model.EmployeeActivity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,9 +27,13 @@ public class ConsumeWebService {
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         HttpEntity<EmployeeActivity> entity = new HttpEntity<EmployeeActivity>(headers);
 
+        final List<EmployeeActivity> response;
+
         try {
-             return (List<EmployeeActivity>) restTemplate.exchange(URL,
-                                HttpMethod.GET, entity, EmployeeActivity.class).getBody();
+
+            response = (List<EmployeeActivity>) restTemplate.exchange(URL,
+                    HttpMethod.GET, entity, EmployeeActivity.class).getBody();
+            return response;
 
         }catch (Exception myException){
             throw new Exception("Downstream Endpoint is not responding " +myException);

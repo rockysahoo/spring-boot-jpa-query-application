@@ -1,5 +1,6 @@
 package com.hcl.employee.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -19,8 +20,17 @@ public class EmployeeActivity {
 	@NotFound(action = NotFoundAction.IGNORE)*/
 	private Long id;
 
-	@Column(name="EMPLOYEE_NAME")
+	//@Column(name="DEPARTMENT")
+	@JsonProperty("DEPARTMENT")
+	private String department;
+
+	//@Column(name="EMPLOYEE_NAME")
+	@JsonProperty("EMPLOYEE_NAME")
 	private String name;
+
+	//@Column(name="EMPLOYEE_SALARY")
+	@JsonProperty("EMPLOYEE_SALARY")
+	private Integer salary;
 
 	public Long getId() {
 		return id;
@@ -53,12 +63,6 @@ public class EmployeeActivity {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-
-	@Column(name="EMPLOYEE_SALARY")
-	private Integer salary;
-
-	@Column(name="DEPARTMENT")
-	private String department;
 
 	@Override
 	public String toString() {
