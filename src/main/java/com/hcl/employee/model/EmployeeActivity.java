@@ -60,7 +60,13 @@ public class EmployeeActivity {
 	@Column(name="DEPARTMENT")
 	private String department;
 
-
-
-
+	@Override
+	public String toString() {
+		return "EmployeeActivity{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", salary=" + salary +
+				", department='" + department + '\'' +
+				'}';
+	}
 }
