@@ -17,4 +17,6 @@ public interface EmployeeActivityService {
 
 
 	List<EmployeeActivity> getEmployeesWithSalary(Integer min_salary, Integer salary);
+
+	void addEmployees(List<EmployeeActivity> employeeActivity);
 }

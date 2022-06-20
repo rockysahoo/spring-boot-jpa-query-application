@@ -60,5 +60,11 @@ public class EmployeeActivityImpl implements EmployeeActivityService{
 
 	}
 
+	public void addEmployees(List<EmployeeActivity> employeeActivity){
+
+		employeeActivityDao.saveAll(employeeActivity);
+
+	}
+
 
 }

@@ -24,6 +24,7 @@ public class EmployeeController {
 	@PostMapping("/employee/add")
 	public  Employee addEmployee(@RequestBody Employee employee)
 	{
+
 		return employeeService.addEmployee(employee);
 	}
 
@@ -37,6 +38,7 @@ public class EmployeeController {
 	@PatchMapping("/employee/edit")
 	public Employee editEmployee(@RequestBody Employee employee)
 	{
+
 		return employeeService.editEmployee(employee);
 	}
 	
