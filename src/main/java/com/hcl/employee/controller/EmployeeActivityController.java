@@ -43,7 +43,7 @@ public class EmployeeActivityController {
 	}
 
 	@GetMapping("/get/employees/{Id}")
-	public EmployeeActivity getEmployeeById(@PathVariable(name="Id")Long Id) {
+	public EmployeeActivity getEmployeeById(@PathParam("Id") Long Id) {
 		EmployeeActivity employees;
 		employees = employeeActivityService.getEmployee(Id);
 		return employees;
