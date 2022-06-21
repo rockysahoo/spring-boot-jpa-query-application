@@ -43,7 +43,7 @@ public class EmployeeActivityController {
 	}
 
 	@GetMapping("/get/employees/{Id}")
-	public EmployeeActivity getEmployeeById(@PathParam("Id") Long Id) {
+	public EmployeeActivity getEmployeeById(@PathParam("Id") Long Id) { //if id not there then return null, not exception
 		EmployeeActivity employees;
 		employees = employeeActivityService.getEmployee(Id);
 		return employees;
