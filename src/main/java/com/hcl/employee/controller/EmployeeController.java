@@ -28,7 +28,7 @@ public class EmployeeController {
 		return employeeService.addEmployee(employee);
 	}
 
-	@GetMapping("/employee/{code}")
+	@GetMapping(value = "/employee/{code}")
 	public  Employee viewEmployee(@PathVariable (name="code") Integer code)
 	{
 		return employeeService.viewEmployee(code);
